@@ -1,6 +1,6 @@
 Rebol [
-  title: "Rosetta code: Audio_alarm"
-  file: %AudioAlarm.r3
+  title: "Rosetta code: Audio alarm"
+  file: %Audio_alarm.r3
   url: https://rosettacode.org/wiki/Audio_alarm
   needs: 3.14.1
   note: [
