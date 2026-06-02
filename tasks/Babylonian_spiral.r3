@@ -10,7 +10,7 @@ babylonian-spiral: function/with [
 ][
     ;; Grow the shared square-cache if needed so index i holds i*i
     if nsteps > s: length? square-cache [
-        for i s nsteps + 1 1 [
+        for i s nsteps 1 [
             append square-cache i * i
         ]
     ]
@@ -21,7 +21,6 @@ babylonian-spiral: function/with [
     loop nsteps - 2 [
         ;; Heading of the last delta vector, in degrees
         theta: arctangent2 last output
-
         ;; Search increasing vector lengths until at least one integer candidate is found
         candidates: clear []
         while [empty? candidates] [
@@ -29,12 +28,12 @@ babylonian-spiral: function/with [
             ;; Enumerate all pairs (i,j) where i²+j²=delta-squared
             for i 0 (-1 + length? square-cache) 1 [
                 a: pickz square-cache i
-                if a > delta-squared / 2 [break]  ;; a <= delta-squared/2 by symmetry
+                if a > (delta-squared / 2) [break]  ;; a <= delta-squared/2 by symmetry
                 j: 1 + to integer! square-root delta-squared
                 while [j >= 1] [
                     b: square-cache/(j + 1)
-                    if delta-squared > a + b [break]  ;; j only decreases from here
-                    if delta-squared = a + b [
+                    if delta-squared > (a + b) [break]  ;; j only decreases from here
+                    if delta-squared = (a + b) [
                         ;; Add all 8 reflections of the (i,j) solution
                         -i: negate i
                         -j: negate j
@@ -50,7 +49,7 @@ babylonian-spiral: function/with [
             ]
         ]
         ;; Pick the candidate whose heading deviates least clockwise from theta
-        p: first sort/compare candidates func [da db] [
+        append output first sort/compare candidates func [da db] [
             angle-a: theta - arctangent2 da
             angle-b: theta - arctangent2 db
             ; Wrap into [0, 360) so smallest clockwise turn sorts first
@@ -58,7 +57,6 @@ babylonian-spiral: function/with [
             angle-b: angle-b % 360   if angle-b < 0 [angle-b: angle-b + 360]
             angle-a < angle-b
         ]
-        append output p
     ]
     ;; Convert delta sequence in-place to absolute positions by cumulative summation
     pos: 0x0 forall output [ change output pos: pos + output/1 ]

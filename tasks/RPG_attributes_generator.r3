@@ -1,7 +1,7 @@
 Rebol [
     title: "Rosetta code: RPG attributes generator"
-    file:  %RPG_attributes_generatot.r3
-    url:   https://rosettacode.org/wiki/Bitmap/RPG_attributes_generatot
+    file:  %RPG_attributes_generator.r3
+    url:   https://rosettacode.org/wiki/Bitmap/RPG_attributes_generator
 ]
 
 rpg-roll: function["RPG attributes generator"][

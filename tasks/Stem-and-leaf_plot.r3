@@ -2,6 +2,7 @@ Rebol [
     title: "Rosetta code: Stem-and-leaf plot"
     file:  %Stem-and-leaf_plot.r3
     url:   https://rosettacode.org/wiki/Stem-and-leaf_plot
+    needs: 3.21.16
 ]
 
 stem-and-leaf-plot: function [

@@ -45,5 +45,5 @@ draw-circle img 15x15 14 green  ;; large green ring, nearly fills the canvas
 
 ;; scale up 10x with nearest-neighbour (Box) to keep pixel edges sharp
 img: resize/filter img 290 'Box
-save %midpoint-circles.png img
+save %Bitmap-Midpoint_circle_algorithm.png img
 try [view img]

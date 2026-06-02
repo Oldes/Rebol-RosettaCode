@@ -4,6 +4,8 @@ Rebol [
     url:   https://rosettacode.org/wiki/Terminal_control/Restricted_width_positional_input/No_wrapping
 ]
 
+if function? :wait-for-key [wait-key: :wait-for-key] ;; backward compatibility
+
 positioned-input: function [
     "Get user input at specific terminal position with max length"
     row    [integer!] "Row number (1-based)"
@@ -21,7 +23,7 @@ positioned-input: function [
     prin start-pos
     ;; Input loop
     forever [
-        ch: wait-for-key
+        ch: wait-key
         case [
             any [ch = CR ch = LF][ break ]
             any [ch = BS ch = 127][ ;; Backspace/DEL

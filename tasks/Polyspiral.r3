@@ -38,5 +38,5 @@ loop 4 [
   draw image commands                ;; Render the spiral on the image with the accumulated commands
 ]
 
-try [save %polyspiral.png image]     ;; Save the image as PNG
+try [save %Polyspiral.png image]     ;; Save the image as PNG
 try [view image]                     ;; Display the final image window with drawn spirals

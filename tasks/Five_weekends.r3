@@ -35,7 +35,7 @@ five-weekends: function/with [
             ]
         ]  
     ]
-    print-horizontal-line
+    print-hline
     print ["Total five-weekend months:               " total-fw-months]
     print ["Total years with no five-weekend months: " boring-years ]
     print ["Total years with 2+ five-weekend months: " awesome-years]

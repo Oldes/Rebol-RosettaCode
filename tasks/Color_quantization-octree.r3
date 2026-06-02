@@ -256,8 +256,8 @@ unless exists? %Quantum_frog.png [
 ]
 
 foreach [colors output-name] [
-    16 %Quantum_frog-octree-16-colors.png
-    32 %Quantum_frog-octree-32-colors.png
+    16 %Color_quantization-octree_frog-16-colors.png
+    32 %Color_quantization-octree_frog-32-colors.png
 ][
     ;; Quantize to N colors
     time: delta-time [

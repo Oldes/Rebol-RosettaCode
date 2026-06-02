@@ -1,7 +1,7 @@
 Rebol [
 	title: "Rosetta code: 100 doors"
-	file: %100_doors.r3
-	url: https://rosettacode.org/wiki/100_doors
+	file:  %100_doors.r3
+	url:   https://rosettacode.org/wiki/100_doors
 	needs: 3.0.0
 ]
 print {^/Using bitsets^/}
@@ -14,7 +14,7 @@ repeat i 100 [
     ;; Inner loop: Check each door position (j = 1 to 100)
     repeat j 100 [
         ;; If door j index is divisible by pass number i (no remainder)
-        if zero? (j // i) [
+        if zero? remainder j i [
             ;; Toggle the door's bit:
             ;; doors/:j accesses door j in the bitset
             ;; 'not' flips the bit value (0 -> 1, 1 -> 0)
@@ -31,7 +31,7 @@ repeat i 100 [
         print ["door" i "is open"]
     ]
 ]
-print-horizontal-line
+print-hline
 print {^/Alternative version using mathmatical approach^/}
 ;; Loop variable i from 1 to 10 (since 10^2 = 100, covers doors 1 to 100)
 repeat i 10 [

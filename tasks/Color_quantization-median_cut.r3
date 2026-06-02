@@ -61,8 +61,8 @@ unless exists? %Quantum_frog.png [
 ]
 
 foreach [colors output-name] [
-    16 %Quantum_frog-16-colors.png
-     3 %Quantum_frog-3-colors.png
+    16 %Color_quantization-median_cut_frog-16-colors.png
+     3 %Color_quantization-median_cut_frog-3-colors.png
 ][
     ;; Quantize to N colors
     time: delta-time [

@@ -1,7 +1,7 @@
 Rebol [
 	title: "Rosetta code: SHA-256 Merkle tree"
 	file:  %SHA-256_Merkle_tree.r3
-	url:    https://rosettacode.org/wiki/SHA-256_Merkle_tree
+	url:   https://rosettacode.org/wiki/SHA-256_Merkle_tree
 ]
 
 markle-tree: function/with [
@@ -61,7 +61,7 @@ assert [
 ]
 
 ;; Using the image from the task specification:
-image-url:  https://rosettacode.org/wiki/File:RosettaCodeTitle.png
+image-url:  https://github.com/thundergnat/rc-run/blob/master/rc/resources/title.png?raw=true
 assert [
 	not error? bin: try [read image-url]
 	#{A4F902CF9D51FE51EDA156A6792E1445DFF65EDF3A217A1F3334CC9CF1495C2C}

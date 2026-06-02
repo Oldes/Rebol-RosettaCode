@@ -68,15 +68,15 @@ printHistogram: function [
 ;;********************** Main ***********************
 
 print "Be patient! Generating Data and Gaussian Histogram..."
-print-horizontal-line
+print-hline
 
 time: dt [
     values: generate nMax   ;; generate nMax pairs of random values
     printHistogram values   ;; print histogram of generated values
 ]
 
-print-horizontal-line
+print-hline
 print [nMax * 2 "Values processed in:" round/to third time 0.01 "sec"]
 print ["Mean: " values/mean]
 print ["STD : " values/sample-deviation]
-print-horizontal-line
+print-hline

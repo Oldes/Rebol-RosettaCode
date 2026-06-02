@@ -18,7 +18,7 @@ divisible?: function [
         p: p * d                           ;; accumulate digit product
         c: to integer! c / 10              ;; shift right one digit
     ]
-    not zero? n // p                       ;; n must NOT be divisible by digit product
+    not zero? remainder n p                ;; n must NOT be divisible by digit product
 ]
 
 count: 0

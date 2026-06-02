@@ -10,6 +10,7 @@ evolve: function/with [
     childs [integer!] "number of offspring per generation"
     rate   [number!]  "per-character mutation probability (0.0..1.0)"
 ][
+    trg: target
     ;; create initial random parent of same length as target
     parent: clear ""
     repeat i length? target [
@@ -34,12 +35,13 @@ evolve: function/with [
 ][
     alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZ "     ;; allowed gene pool (uppercase letters + space)
     children: copy []                           ;; reusable buffer for a generation's children
+    trg: _
 
     ;; compute closeness of 'string' to 'target' as Hamming distance (lower is better)
     fitness: function [string] [
         sum: 0
         repeat i length? string [
-            if string/:i <> target/:i [ ++ sum ]  ;; count mismatched positions
+            if string/:i <> trg/:i [ ++ sum ]   ;; count mismatched positions
         ]
         sum
     ]

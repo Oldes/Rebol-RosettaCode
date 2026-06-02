@@ -78,4 +78,4 @@ draw-sphere: function/with [size [pair!]][
 ]
 
 img: draw-sphere 400x400
-browse save %draw-sphere.jpg img
+browse save %Draw_a_sphere.jpg img

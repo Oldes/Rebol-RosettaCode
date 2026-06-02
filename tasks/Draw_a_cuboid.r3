@@ -37,4 +37,4 @@ draw-cuboid: function [
 img: make image! 500x500
 draw-cuboid img  85x450 200 300 300
 draw-cuboid img 285x450 100 100 100
-browse save %draw-cuboid.png img
+browse save %Draw_a_cuboid.png img

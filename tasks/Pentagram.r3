@@ -29,5 +29,5 @@ img: draw canvas compose/deep [
     line-width 3        
     line (points/1) (points/5) (points/9) (points/3) (points/7) (points/1)
 ]
-try [save %pentagram.png img]
+try [save %Pentagram.png img]
 try [view img]

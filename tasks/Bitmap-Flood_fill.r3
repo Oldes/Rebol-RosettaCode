@@ -61,4 +61,4 @@ img: load %Unfilledcirc.png
 img: flood-fill img 200x200 white red
 img: flood-fill img 100x100 black blue
 ;; Save result and open in browser
-browse save %Filledcirc.png img
+browse save %Bitmap-Flood_fill.png img

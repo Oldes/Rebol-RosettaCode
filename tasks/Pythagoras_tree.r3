@@ -55,7 +55,7 @@ pythagoras-tree: function/with [
 
 ;; Usage example:
 img: pythagoras-tree 1600x800 14
-save %pythagoras-tree.jpg img
+save %Pythagoras_tree.jpg img
 if cv [
     cv/imshow/name :img "Pythagoras Tree"
     cv/waitKey 0

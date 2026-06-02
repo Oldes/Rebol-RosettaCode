@@ -27,10 +27,4 @@ barnsley-fern: function [size [pair!]][
 ]
 
 img: barnsley-fern 640x640
-save %barnsley-fern.png img
-
-if cv: attempt [import 'opencv][
-    cv/imshow/name img "Barnsley"
-    cv/waitKey 0
-]
-   
+browse save %Barnsley_fern.png img
