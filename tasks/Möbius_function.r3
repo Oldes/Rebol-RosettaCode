@@ -11,48 +11,39 @@ mobius: function [
              0 if n has a squared prime factor.}
     limit [integer!] "upper bound of the sieve"
 ][
-    ;; --- sieve: build MU array up to limit ---
-    MU: append/dup #(int32! []) 1 limit
+    MU: append/dup #(int32! []) 1 limit  ;; all ones: assume square-free, even factors
 
-    for i 0 square-root limit 1 [
-        if i > 1 [
-            if MU/:i == 1 [
-                j: i
-                while [j < limit] [
-                    MU/:j: MU/:j * negate i
-                    j: j + i
-                ]
-                j: i * i
-                while [j < limit] [
-                    MU/:j: 0
-                    j: j + (i * i)
-                ]
+    for i 2 square-root limit 1 [
+        if MU/:i == 1 [                  ;; i is prime (untouched by earlier steps)
+            ni: negate i
+            for j i limit i [
+                MU/:j: MU/:j * ni        ;; flip sign for each multiple of prime i
+            ]
+            ii: i * i
+            for j ii limit ii [
+                MU/:j: 0                 ;; zero out multiples of i² (not square-free)
             ]
         ]
     ]
-    ;; --- normalise: collapse ±multiples to ±1 ---
-    i: 2
-    while [i < limit] [
+    for i 2 limit 1 [
         v: MU/:i
         MU/:i: case [
-            v =  i       [ 1]
-            v = negate i [-1]
-            v <  0       [ 1]
-            v >  0       [-1]
-            true         [ v]
+            v = i        [ 1]            ;; product of primes collapsed to +1
+            v = negate i [-1]            ;; product of primes collapsed to -1
+            v < 0        [ 1]            ;; negative even count -> +1
+            v > 0        [-1]            ;; positive odd count  -> -1
+            'else        [ v]            ;; zero: already correct
         ]
-        ++ i
     ]
     MU
 ]
 
 mu: mobius 1000000
 
-;; --- output first 199 terms ---
 print "first 199 terms of the mobius sequence:"
 prin "   "
 repeat n 199 [
-    prin pad form mu/:n -3
-    if ((n + 1) % 20) = 0 [ print "" ]
+    if zero? n % 20 [ print "" ]  ;; newline every 20 terms
+    prin pad mu/:n -3
 ]
 print ""
