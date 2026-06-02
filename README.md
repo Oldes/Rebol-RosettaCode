@@ -5,7 +5,7 @@
 
 # Rebol - Rosetta Code
 
-A collection of [Rebol 3](https://github.com/Oldes/Rebol3) solutions for tasks published on [Rosetta Code](https://rosettacode.org) — a programming chrestomathy site that aims to present solutions to the same task in as many different languages as possible.
+A collection of [Rebol 3](https://github.com/Oldes/Rebol3) solutions for tasks published on [Rosetta Code](https://rosettacode.org) — a programming chrestomathy site that aims to present solutions to the same task in as many different languages as possible. Scripts from this repository are also present at this page: https://rebol.tech/examples/
 
 ## Requirements
 
