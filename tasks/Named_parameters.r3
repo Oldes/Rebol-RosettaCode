@@ -1,7 +1,7 @@
 Rebol [
     title: "Rosetta code: Named parameters"
     file:  %Named_parameters.r3
-    url:   https://rosettacode.org/wiki/Named_parameters.r3
+    url:   https://rosettacode.org/wiki/Named_parameters
 ]
 
 print as-yellow "Method 1: Using refinements as named parameters"
