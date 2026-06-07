@@ -52,8 +52,9 @@ dijkstra: function [
             if find not-seen vertex2 [
                 altdist: dist/:vertex1 + cost
                 if altdist < dist/:vertex2 [
+                    ;; vertex1 is best predecessor of vertex2
                     dist/:vertex2:     altdist
-                    previous/:vertex2: vertex1  ;; vertex1 is best predecessor of vertex2
+                    previous/:vertex2: vertex1
                 ]
             ]
         ]
@@ -74,7 +75,7 @@ print-path: function [
     path [block!]
 ][
     buf: to string! path/1
-    foreach vertex next path [append append buf " -> " vertex]
+    foreach vertex next path [append append buf " → " vertex]
     print [
         "Shortest path from" path/1 "to" last path ":"
         buf
