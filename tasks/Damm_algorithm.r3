@@ -13,7 +13,7 @@ damm-valid?: function/with [
     foreach d digits [
         interim: pickz pickz table interim d
     ]
-    interim = 0
+    zero? interim
 ][
     table: [
         [0 3 1 7 5 9 8 6 4 2]
