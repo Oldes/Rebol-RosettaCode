@@ -2,6 +2,7 @@ Rebol [
     title: "Rosetta code: Sort stability"
     file:  %Sort_stability.r3
     url:   https://rosettacode.org/wiki/Sort_stability
+    needs: 3.21.7
 ]
 
 data: [
