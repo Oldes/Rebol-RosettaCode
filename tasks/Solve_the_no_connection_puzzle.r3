@@ -62,8 +62,5 @@ print-solution: function [p][
 solutions: no-connection-puzzle
 print "First solution:"
 print-solution solutions/1
+
 print ["All solutions:" mold solutions]
-
-
-
-
