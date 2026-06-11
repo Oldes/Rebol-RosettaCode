@@ -6,7 +6,6 @@ Rebol [
 ]
 
 b2d: import 'blend2d          ;--use blend2d (draw module)
-cv:  attempt [import 'opencv] ;--for visualisation
 
 fractal-tree: function/with [
     spec [block! map! object!] "Configuration options"
@@ -56,8 +55,4 @@ fractal-tree: function/with [
 
 ;; Usage example:
 img: fractal-tree [size: 800x600 depth: 10]
-save %fractal-tree.png img
-if cv [
-    cv/imshow/name :img "Fractal Tree"
-    cv/waitKey 0
-]
+browse save %Fractal_tree.png img
