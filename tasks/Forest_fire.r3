@@ -9,8 +9,9 @@ forest-fire: context [
     ;- public variables
     pfire: 0.0001 ;; probability an empty cell spontaneously ignites
     ptree: 0.01   ;; probability an empty cell grows a new tree
-    gs:    100    ;; grid size (number of active cells per row/column)
-    ps:    6      ;; point size
+    gs:    200    ;; grid size (number of active cells per row/column)
+    ps:    4      ;; point size
+    delay: 5      ;; in miliseconds
     
     ;- local variables 
     rows: cols: gw: gsz: off: f: p: img: none
@@ -66,7 +67,6 @@ forest-fire: context [
     ]
 
     redraw-forest: func [/local i h color clr][
-        clear draw-cmds
         foreach [k v] points [clear v]
         clr: 0.30.0
         for r 0 rows 1 [
@@ -78,13 +78,15 @@ forest-fire: context [
                         1 [0.128.0]
                     ][ clr/1: min 255 h * 25 clr]
                     if color [
+                        ;; store point position per color
                         unless blk: points/:color [blk: points/:color: copy []]
-                        append blk as-pair c * 6 r * 6  ;; pixel coords (6px per cell)
+                        append blk as-pair c * ps r * ps
                     ]
                 ]
             ]
         ]
-
+        ;; Update draw commands to draw points per color
+        clear draw-cmds
         foreach [clr blk] points [ repend draw-cmds ['fill clr 'point blk] ]
         draw img head draw-cmds
     ]
@@ -100,13 +102,13 @@ with forest-fire [
             update-forest
             redraw-forest
             cv/imshow :img               ;; display it
-            if 0 < cv/waitKey 5 [break]  ;; for some time
+            if 0 < cv/waitKey :delay [break]
         ]
         cv/destroyAllWindows
     ][
         ;; OpenCV not available!
         ;; update the simulation with a few steps
-        100 [ update-forest ]
+        loop 100 [ update-forest ]
         redraw-forest
     ]
 
