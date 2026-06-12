@@ -11,7 +11,7 @@ roman-to-arabic: function [
     arabic: 0
     parse roman [
         some [
-            copy roman: [
+            [
               "IIIX" (a: 7  ) | "IIX"  (a: 8  )  ; 8-7 exceptions
             | "XXXC" (a: 70 ) | "XXC"  (a: 80 )  ; 80-70 exceptions
             | "CCXM" (a: 700) | "CCM"  (a: 800)  ; 800-700 exceptions
