@@ -4,29 +4,17 @@ Rebol [
     url:   https://rosettacode.org/wiki/Julia_set
 ]
 
-julia: function [size [pair!]][
+julia: function/with [size [pair!] zoom [number!]][
     W: to integer! size/x W2: W / 2
     H: to integer! size/y H2: H / 2
-    Zoom: 1
     MaxIter: 255
     MoveX: MoveY: 0
     Cx: -0.7
-    Cy: 0.27015
-
-    ;; precompute color palette
-    colors: copy []
-    clr: 0.0.0
-    repeat n 256 [
-        i: n - 1
-        clr/1:  i >> 5 * 36
-        clr/2: (i >> 3 & 7) * 36
-        clr/3: (i & 3) * 85
-        append colors clr
-    ]
+    Cy:  0.27015
 
     img: make image! size
-    scaleX: 1.5 / (0.5 * Zoom * W)
-    scaleY: 1.0 / (0.5 * Zoom * H)
+    scaleX: 1.5 / (Zoom * W2)
+    scaleY: 1.0 / (Zoom * H2)
 
     for x 0 W - 1 1 [
         for y 0 H - 1 1 [
@@ -46,6 +34,16 @@ julia: function [size [pair!]][
         ]
     ]
     img
+][
+    ;; precompute color palette
+    colors: copy []
+    clr: 0.0.0
+    for i 0 255 1 [
+        clr/1:  i >> 5      * 36
+        clr/2: (i >> 3 & 7) * 36
+        clr/3: (i      & 3) * 85
+        append colors clr
+    ]
 ]
 
-browse save %Julia_set.png julia 800x600
+browse save %Julia_set.png julia 800x600 1
