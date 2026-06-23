@@ -33,7 +33,7 @@ result: make map! []  ;; n -> smallest k where k^k contains n
 
 k: 1
 while [51 > length? result] [
-    pow-str: probe bigpow k k
+    pow-str: bigpow k k
     for n 0 50 1 [
         unless find result n [         ;; skip already found
             if find pow-str form n [   ;; n appears in k^k?

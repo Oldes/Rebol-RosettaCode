@@ -8,7 +8,7 @@ sys/make-scheme [
     name:    'lines
     purpose: "Scheme for reading a text file line by line without loading it all into memory"
 
-    update-lines: function[
+    update-lines: function [
         "Read next chunk and extract complete lines into queue"
         state [object!]
     ][
