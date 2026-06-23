@@ -23,11 +23,11 @@ markov: function [
     dict: make map! (length? words) / 3
 
     forall words [
-        prefix: combine/with copy/part words key-size " "
+        prefix: ajoin/with copy/part words key-size SP
         append any [
             dict/:prefix
             dict/:prefix: copy []        ;; create entry if missing
-        ] any [words/(1 + key-size) _]   ;; next word or _ at end of text
+        ] words/(1 + key-size)           ;; next word or none at end of text
     ]
 
     prefix: random/only keys-of dict     ;; random starting prefix
