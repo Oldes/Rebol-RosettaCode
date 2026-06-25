@@ -12,7 +12,7 @@ sudoku-solver: context [
         repeat i 81 [grid/:i: -48 + s/:i]
     ]
 
-    check-validity: func [val x y /local start-x start-y i j] [
+    check-validity: func [val x y /local start-x start-y] [
         repeat i 9 [
             if any [
                 grid/(y * 9 + i) = val
@@ -29,7 +29,7 @@ sudoku-solver: context [
         true
     ]
 
-    place-number: func [pos [integer!] /local n] [
+    place-number: func [pos [integer!]] [
         if pos > 81 [throw 'finished]
         if grid/:pos > 0 [return place-number pos + 1]
         repeat n 9 [
@@ -41,7 +41,7 @@ sudoku-solver: context [
         ]
     ]
 
-    print-grid: func [/local sb i j] [
+    print-grid: func [/local sb] [
         sb: clear ""
         repeat i 9 [
             repeat j 9 [
