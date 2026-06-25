@@ -8,25 +8,35 @@ multiply-big: function [
     "Multiply two big integers represented as strings"
     sa [string!] sb [string!]
 ][
+    neg?: (sa/1 = #"-") xor (sb/1 = #"-")
+    if sa/1 = #"-" [sa: next sa]
+    if sb/1 = #"-" [sb: next sb]
     len-a: length? sa
     len-b: length? sb
     sr: append/dup copy "" #"0" len-a + len-b
-    i: len-a
-    while [i > 0] [
-        j: len-b
-        while [j > 0] [
-            a: sa/:i - 48
-            b: sb/:j - 48
+    for i len-a 1 -1 [
+        for j len-b 1 -1 [
+            a: -48 + sa/:i ;; char to number
+            b: -48 + sb/:j
             p2: i + j
             p1: p2 - 1
-            p: (a * b) + (sr/:p2 - 48)
+            p: (a * b) + (-48 + sr/:p2)
             sr/:p2: #"0"   + (p % 10) ;; digit
             sr/:p1: sr/:p1 + (p / 10) ;; carry
-            -- j
         ]
-        -- i
     ]
     parse sr [remove some #"0"] ;; remove zeros from the head
+    case [
+        empty? sr [insert sr #"0"]
+        neg?      [insert sr #"-"]
+    ]
     sr
 ]
-print multiply-big "18446744073709551616" "18446744073709551616"
+foreach [a b][
+    "18446744073709551616" "0"
+    "18446744073709551616" "1"
+    "18446744073709551616" "18446744073709551616"
+    "18446744073709551616" "-18446744073709551616"
+][
+    print [a "*" b "=" multiply-big a b]
+]
