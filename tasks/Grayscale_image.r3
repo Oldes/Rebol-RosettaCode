@@ -15,5 +15,5 @@ gray2: luminosity copy img      ;; Use BT.709 luminosity formula
 gray3: luminosity/luma copy img ;; Use BT.601 gamma-compressed values
 
 save %Grayscale_image_average.png gray1
-save %Grayscale_image_BT709.png  gray2
-save %Grayscale_image_BT601.png  gray3
+save %Grayscale_image_BT709.png   gray2
+save %Grayscale_image_BT601.png   gray3
