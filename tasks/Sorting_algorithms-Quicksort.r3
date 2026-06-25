@@ -1,7 +1,7 @@
 Rebol [
     title: "Rosetta code: Sorting algorithms/Quicksort"
     file:  %Sorting_algorithms-Quicksort.r3
-    url:   https://rosettacode.org/wiki/Sorting_algorithms-Quicksort
+    url:   https://rosettacode.org/wiki/Sorting_algorithms/Quicksort
 ]
 
 quick-sort: function/with [

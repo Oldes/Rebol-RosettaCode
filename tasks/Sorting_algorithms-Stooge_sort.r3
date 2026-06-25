@@ -1,7 +1,7 @@
 Rebol [
     title: "Rosetta code: Sorting algorithms/Stooge sort"
     file:  %Sorting_algorithms-Stooge_sort.r3
-    url:   https://rosettacode.org/wiki/Sorting_algorithms-Stooge_sort
+    url:   https://rosettacode.org/wiki/Sorting_algorithms/Stooge_sort
 ]
 
 stooge-sort: function/with [

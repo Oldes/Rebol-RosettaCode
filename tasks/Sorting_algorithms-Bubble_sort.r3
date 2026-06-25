@@ -1,7 +1,7 @@
 Rebol [
     title: "Rosetta code: Sorting algorithms/Bubble sort"
     file:  %Sorting_algorithms-Bubble_sort.r3
-    url:   https://rosettacode.org/wiki/Sorting_algorithms-Bubble_sort
+    url:   https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort
 ]
 
 bubble-sort: function [

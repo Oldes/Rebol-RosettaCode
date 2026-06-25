@@ -1,7 +1,7 @@
 Rebol [
     title: "Rosetta code: Sorting algorithms/Radix sort"
     file:  %Sorting_algorithms-Radix_sort.r3
-    url:   https://rosettacode.org/wiki/Sorting_algorithms-Radix_sort
+    url:   https://rosettacode.org/wiki/Sorting_algorithms/Radix_sort
 ]
 
 radix-sort: function [
