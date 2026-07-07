@@ -1,7 +1,7 @@
 Rebol [
     title: "Rosetta code: Bioinformatics/Sequence mutation"
     file:  %Bioinformatics-Sequence_mutation.r3
-    url:   https://rosettacode.org/wiki/Bioinformatics-Sequence_mutation
+    url:   https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation
 ]
 
 bases: "ATGC"
