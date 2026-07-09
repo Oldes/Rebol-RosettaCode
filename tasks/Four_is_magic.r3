@@ -31,7 +31,7 @@ name-number: function/with [
             result: ajoin [
                 word
                 if lions/:lion [ajoin [SP lions/:lion]]
-                if result                 [ajoin [SP result]]
+                if result      [ajoin [SP result     ]]
             ]
         ]
         absnum: absnum // 1000     ;; next group of three digits
