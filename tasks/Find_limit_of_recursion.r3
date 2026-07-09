@@ -6,7 +6,7 @@ Rebol [
 ]
 
 x: 0
-recurse: does [print ++ x recurse]
+recurse: does [++ x recurse]
 attempt [recurse]
 
 print ["Recursion limit is:" x]
