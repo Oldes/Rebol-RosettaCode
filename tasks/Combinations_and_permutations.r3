@@ -40,7 +40,7 @@ tolog: function [
 ][
     h: to integer! (v / (log-e 10))
     mantissa: exp (v - (h * (log-e 10)))
-    ajoin [mantissa "e" h]
+    ajoin [mantissa #"e" h]
 ]
 
 permf: function [
