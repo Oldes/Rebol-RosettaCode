@@ -1,7 +1,7 @@
 [![rebol-rosettacode](https://github.com/user-attachments/assets/b74b23f8-a992-4d90-b749-f4872cf16de8)](https://github.com/Oldes/Rebol-RossetaCode)
 [![Gitter](https://badges.gitter.im/rebol3/community.svg)](https://app.gitter.im/#/room/#Rebol3:gitter.im)
 [![Zulip](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://rebol.zulipchat.com/)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Oldes/Rebol-RossetaCode)
+[![Ask DeepWiki](https://raw.githubusercontent.com/Oldes/media/refs/heads/master/deepwiki-badge.svg)](https://deepwiki.com/Oldes/Rebol-RossetaCode)
 
 # Rebol - Rosetta Code
 
